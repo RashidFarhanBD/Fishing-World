@@ -540,6 +540,116 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4003621433246146471, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
   m_PrefabInstance: {fileID: 2324356781993973917}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &653204536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653204537}
+  - component: {fileID: 653204538}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &653204537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653204536}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.484, y: -0.3617, z: 0.553}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1325905356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653204538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653204536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57f23640aaffc342bbf57c7e8413beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1325905357}
+  planet: {fileID: 1036295578}
+  floatHeight: 0.1
+  waterLeveOffset: 0.1
+  FloaterToPlanetCenter: {x: 0, y: 0, z: 0}
+  CentreToFloaterDistance: 0
+  WaterSurfaceheight: 0
+  boatSubmergedValue: 0
+  floaterCount: 4
+  waterDamping: 0.1
+  waterAngularDamp: 0.25
+--- !u!1 &684173477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684173478}
+  - component: {fileID: 684173479}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &684173478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684173477}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1325905356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &684173479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684173477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57f23640aaffc342bbf57c7e8413beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1325905357}
+  planet: {fileID: 1036295578}
+  floatHeight: 1
+  waterLeveOffset: 0.5
+  FloaterToPlanetCenter: {x: 0, y: 0, z: 0}
+  CentreToFloaterDistance: 0
+  WaterSurfaceheight: 0
+  boatSubmergedValue: 0
+  floaterCount: 4
+  waterDamping: 0.1
+  waterAngularDamp: 0.1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +699,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &875235380
+--- !u!1 &1021784758
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -597,51 +707,269 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 875235382}
-  - component: {fileID: 875235381}
+  - component: {fileID: 1021784759}
+  - component: {fileID: 1021784760}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &875235381
+  m_IsActive: 0
+--- !u!4 &1021784759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021784758}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4, y: -0.36150002, z: -0.457}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1325905356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1021784760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875235380}
+  m_GameObject: {fileID: 1021784758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d7ea53c2ac3f4044957e8a43a1f7bf0, type: 3}
+  m_Script: {fileID: 11500000, guid: c57f23640aaffc342bbf57c7e8413beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0
-  speed: 1
-  amplitude: 0.1
-  lenght: 0.1
---- !u!4 &875235382
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 875235380}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 406.95886, y: 0, z: -28.90962}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  rb: {fileID: 1325905357}
+  planet: {fileID: 1036295578}
+  floatHeight: 0.1
+  waterLeveOffset: 0.1
+  FloaterToPlanetCenter: {x: 0, y: 0, z: 0}
+  CentreToFloaterDistance: 0
+  WaterSurfaceheight: 0
+  boatSubmergedValue: 0
+  floaterCount: 4
+  waterDamping: 0.1
+  waterAngularDamp: 0.25
 --- !u!4 &1036295578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 293994262654825994, guid: 648572a5cd441fa4fabfacc1145a5517, type: 3}
   m_PrefabInstance: {fileID: 57800302027126785}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1325905352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325905356}
+  - component: {fileID: 1325905355}
+  - component: {fileID: 1325905354}
+  - component: {fileID: 1325905353}
+  - component: {fileID: 1325905357}
+  - component: {fileID: 1325905359}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1325905353
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325905352}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1325905354
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325905352}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1325905355
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325905352}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1325905356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325905352}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.9, y: 26.27, z: 2.57}
+  m_LocalScale: {x: 2.27, y: 2, z: 2.22}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 684173478}
+  - {fileID: 653204537}
+  - {fileID: 2034142958}
+  - {fileID: 1021784759}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1325905357
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325905352}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0.7
+  m_AngularDamping: 0.01
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &1325905359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325905352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68dd3d177a7e25947860ce5f29f420c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planet: {fileID: 1036295578}
+  gravity: 0
+  rb: {fileID: 1325905357}
+--- !u!1 &2034142957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2034142958}
+  - component: {fileID: 2034142959}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2034142958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034142957}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.415, y: -0.3621, z: -0.497}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1325905356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2034142959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034142957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57f23640aaffc342bbf57c7e8413beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1325905357}
+  planet: {fileID: 1036295578}
+  floatHeight: 0.1
+  waterLeveOffset: 0.1
+  FloaterToPlanetCenter: {x: 0, y: 0, z: 0}
+  CentreToFloaterDistance: 0
+  WaterSurfaceheight: 0
+  boatSubmergedValue: 0
+  floaterCount: 4
+  waterDamping: 0.1
+  waterAngularDamp: 0.25
 --- !u!1001 &57800302027126785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -694,6 +1022,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 8825325232653935234, guid: 648572a5cd441fa4fabfacc1145a5517, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -707,25 +1039,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 525590742677758211, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.3920002
+    - target: {fileID: 465631356289881751, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1080776587928104607, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: planet
       value: 
       objectReference: {fileID: 1036295578}
     - target: {fileID: 1080776587928104607, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: floatHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080776587928104607, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: floaterCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080776587928104607, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: waterDamping
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080776587928104607, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: waterLeveOffset
-      value: 0.25
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080776587928104607, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: waterAngularDamp
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369429061088822588, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.453
       objectReference: {fileID: 0}
     - target: {fileID: 1369429061088822588, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3920002
+      value: -0.74400115
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155635718383028397, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 2155635718383028397, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3920002
+      value: -0.744
       objectReference: {fileID: 0}
     - target: {fileID: 2225243184286240166, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: planet
@@ -779,55 +1135,152 @@ PrefabInstance:
       propertyPath: m_Name
       value: SHIP
       objectReference: {fileID: 0}
-    - target: {fileID: 5643450798762417267, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5897095470612625484, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: planet
       value: 
       objectReference: {fileID: 1036295578}
     - target: {fileID: 5897095470612625484, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
-      propertyPath: waterLeveOffset
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5930510048807850021, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
-      propertyPath: planet
-      value: 
-      objectReference: {fileID: 1036295578}
-    - target: {fileID: 5930510048807850021, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: floatHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897095470612625484, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: floaterCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897095470612625484, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: waterDamping
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5930510048807850021, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+    - target: {fileID: 5897095470612625484, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: waterLeveOffset
-      value: 0.25
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897095470612625484, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: waterAngularDamp
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930510048807850021, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: planet
+      value: 
+      objectReference: {fileID: 1036295578}
+    - target: {fileID: 6708615307411668533, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6708615307411668533, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.392
+      value: -0.6330011
       objectReference: {fileID: 0}
     - target: {fileID: 6828162179425661362, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: planet
       value: 
       objectReference: {fileID: 1036295578}
     - target: {fileID: 6828162179425661362, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: floatHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828162179425661362, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: floaterCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828162179425661362, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: waterDamping
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828162179425661362, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: waterLeveOffset
-      value: 0.25
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828162179425661362, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: waterAngularDamp
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6918099508086670752, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: planet
       value: 
       objectReference: {fileID: 1036295578}
     - target: {fileID: 6918099508086670752, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: floatHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918099508086670752, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: floaterCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918099508086670752, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: waterDamping
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918099508086670752, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: waterLeveOffset
-      value: 0.25
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918099508086670752, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: waterAngularDamp
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+--- !u!1001 &5310149797761047457
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2982171606568973985, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: m_Name
+      value: WaveManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401440084916668462, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 406.95886
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401440084916668462, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401440084916668462, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28.90962
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401440084916668462, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401440084916668462, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401440084916668462, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401440084916668462, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401440084916668462, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401440084916668462, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401440084916668462, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -838,4 +1291,5 @@ SceneRoots:
   - {fileID: 57800302027126785}
   - {fileID: 2324356781993973917}
   - {fileID: 192906784}
-  - {fileID: 875235382}
+  - {fileID: 5310149797761047457}
+  - {fileID: 1325905356}

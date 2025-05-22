@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 465631356289881751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47, y: -0.71500015, z: 0.588}
+  m_LocalPosition: {x: 0.47, y: -0.3920002, z: 0.588}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49,7 +49,7 @@ MonoBehaviour:
   floatHeight: 0.5
   FloaterToPlanetCenter: {x: 0, y: 0, z: 0}
   CentreToFloaterDistance: 0
-  waterLeveOffset: 0.5
+  waterLeveOffset: 0.25
   WaterSurfaceheight: 0
   boatSubmergedValue: 0
 --- !u!1 &2479009386766054842
@@ -369,7 +369,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2225243184286240166
 MonoBehaviour:
@@ -416,10 +416,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5643450798762417267}
   planet: {fileID: 0}
-  floatHeight: 1
+  floatHeight: 0.5
   FloaterToPlanetCenter: {x: 0, y: 0, z: 0}
   CentreToFloaterDistance: 0
-  waterLeveOffset: 0.85
+  waterLeveOffset: 0.25
   WaterSurfaceheight: 0
   boatSubmergedValue: 0
 --- !u!1 &5122189642539845142
@@ -448,7 +448,7 @@ Transform:
   m_GameObject: {fileID: 5122189642539845142}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: -0.71500015, z: -1.25}
+  m_LocalPosition: {x: -0.47, y: -0.3920002, z: -1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -471,7 +471,7 @@ MonoBehaviour:
   floatHeight: 0.5
   FloaterToPlanetCenter: {x: 0, y: 0, z: 0}
   CentreToFloaterDistance: 0
-  waterLeveOffset: 0.5
+  waterLeveOffset: 0.25
   WaterSurfaceheight: 0
   boatSubmergedValue: 0
 --- !u!1 &6680575063311883807
@@ -500,7 +500,7 @@ Transform:
   m_GameObject: {fileID: 6680575063311883807}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: -0.715, z: 0.588}
+  m_LocalPosition: {x: -0.47, y: -0.392, z: 0.588}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -523,7 +523,7 @@ MonoBehaviour:
   floatHeight: 0.5
   FloaterToPlanetCenter: {x: 0, y: 0, z: 0}
   CentreToFloaterDistance: 0
-  waterLeveOffset: 0.5
+  waterLeveOffset: 0.25
   WaterSurfaceheight: 0
   boatSubmergedValue: 0
 --- !u!1 &6785784160026673445
@@ -638,7 +638,7 @@ Transform:
   m_GameObject: {fileID: 7554126831166193908}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47, y: -0.71500015, z: -1.25}
+  m_LocalPosition: {x: 0.47, y: -0.3920002, z: -1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -661,7 +661,7 @@ MonoBehaviour:
   floatHeight: 0.5
   FloaterToPlanetCenter: {x: 0, y: 0, z: 0}
   CentreToFloaterDistance: 0
-  waterLeveOffset: 0.5
+  waterLeveOffset: 0.25
   WaterSurfaceheight: 0
   boatSubmergedValue: 0
 --- !u!1001 &5979670070929210605

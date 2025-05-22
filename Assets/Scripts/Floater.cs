@@ -2,14 +2,30 @@ using UnityEngine;
 
 public class Floater : MonoBehaviour
 {
-    [SerializeField] Rigidbody rb;
-    [SerializeField] Transform planet;
-    [SerializeField] float floatHeight;
-    [SerializeField] Vector3 FloaterToPlanetCenter;
-    [SerializeField] float CentreToFloaterDistance;
-    [SerializeField] float waterLeveOffset = 3f;
-    [SerializeField] float WaterSurfaceheight;
-    [SerializeField] float boatSubmergedValue;
+    [SerializeField] 
+    Rigidbody rb;
+    [SerializeField] 
+    Transform planet;
+    [SerializeField]
+    float floatHeight = 1;
+    [SerializeField]
+    float waterLeveOffset = 3f;
+
+    [SerializeField] 
+    Vector3 FloaterToPlanetCenter;
+    [SerializeField]
+    float CentreToFloaterDistance;
+    [SerializeField] 
+    float WaterSurfaceheight;
+    [SerializeField] 
+    float boatSubmergedValue;
+    [SerializeField]
+    float floaterCount =1;
+    private float bouyancy;
+    [SerializeField]
+    private float waterDamping = .1f ;
+    [SerializeField]
+    private float waterAngularDamp =.25f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,19 +50,20 @@ public class Floater : MonoBehaviour
         // waveHeight = WaveManager.Instance.GetWaveheight(transform.position.x);
         //   rb.AddForceAtPosition(-up * Physics.gravity.magnitude, transform.position, ForceMode.Acceleration);
 
-        rb.AddForceAtPosition((Physics.gravity.y/4) * up, transform.position, ForceMode.Acceleration);
+        rb.AddForceAtPosition((Physics.gravity.y/ floaterCount) * up, transform.position, ForceMode.Acceleration);
 
         if ( isUnderWater())
             
          {
-            float bouyancy = Mathf.Clamp01(boatSubmergedValue / floatHeight);
+             bouyancy = Mathf.Clamp01(boatSubmergedValue / floatHeight);
           
             //rb.AddForce(up * Physics.gravity.magnitude * bouyancy, ForceMode.Acceleration);
             rb.AddForceAtPosition(up * Physics.gravity.magnitude * bouyancy,transform.position,ForceMode.Acceleration);
-           
+            rb.AddForce(bouyancy * -rb.linearVelocity *  waterDamping * Time.fixedDeltaTime, ForceMode.VelocityChange); ;
+            rb.AddTorque(bouyancy * -rb.angularVelocity * waterAngularDamp * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
 
-         }
+        }
     }
 
 
