@@ -14,17 +14,17 @@ public class FauxGravityBody : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    
     }
 
     private void FixedUpdate()
     {
-        if (planet != null) 
+        if (planet != null)
         {
-            var dir =( planet.position - transform.position).normalized;
-            Quaternion targetRot = Quaternion.FromToRotation(transform.up,-dir) * transform.rotation;
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 5* Time.deltaTime);
-        
+            var dir = (planet.position - transform.position).normalized;
+            Quaternion targetRot = Quaternion.FromToRotation(transform.up, -dir) * transform.rotation;
+           // transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 5 * Time.deltaTime);
+              rb.rotation = Quaternion.Slerp(rb.rotation,targetRot, 5 * Time.deltaTime); 
         }
     }
 }
