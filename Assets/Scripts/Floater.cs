@@ -18,11 +18,11 @@ public class Floater : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
 
     {
 
-        float waveHeight = WaveManager.Instance.GetWaveheight(transform.position.x);
+        float waveHeight = WaveManager.Instance.GetWaveheight(rb.position.x);
 
 
         FloaterToPlanetCenter = (transform.position - planet.position);
@@ -30,17 +30,20 @@ public class Floater : MonoBehaviour
 
         CentreToFloaterDistance = FloaterToPlanetCenter.magnitude;
         WaterSurfaceheight = planet.localScale.y * 0.5f + waterLeveOffset;
-        boatSubmergedValue = WaterSurfaceheight - CentreToFloaterDistance;
+        boatSubmergedValue = WaterSurfaceheight - CentreToFloaterDistance + waveHeight;
         // waveHeight = WaveManager.Instance.GetWaveheight(transform.position.x);
-     //   rb.AddForceAtPosition(-up * Physics.gravity.magnitude, transform.position, ForceMode.Acceleration);
+        //   rb.AddForceAtPosition(-up * Physics.gravity.magnitude, transform.position, ForceMode.Acceleration);
 
+        rb.AddForceAtPosition((Physics.gravity.y/4) * up, transform.position, ForceMode.Acceleration);
 
         if ( isUnderWater())
             
          {
             float bouyancy = Mathf.Clamp01(boatSubmergedValue / floatHeight);
           
-            rb.AddForce(up * Physics.gravity.magnitude * bouyancy, ForceMode.Acceleration);
+            //rb.AddForce(up * Physics.gravity.magnitude * bouyancy, ForceMode.Acceleration);
+            rb.AddForceAtPosition(up * Physics.gravity.magnitude * bouyancy,transform.position,ForceMode.Acceleration);
+           
 
 
          }

@@ -22,7 +22,6 @@ public class FauxGravityBody : MonoBehaviour
         if (planet != null) 
         {
             var dir =( planet.position - transform.position).normalized;
-            rb.AddForce (gravity * dir,ForceMode.Force );
             Quaternion targetRot = Quaternion.FromToRotation(transform.up,-dir) * transform.rotation;
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, 5* Time.deltaTime);
         

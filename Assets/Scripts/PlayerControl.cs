@@ -30,10 +30,12 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         moveamount = moveAction.ReadValue<Vector2>();
 
-         moveDir = new Vector3(moveamount.x, 0, moveamount.y);
+        moveDir = new Vector3(moveamount.x, 0, moveamount.y);
+
+        // float targetRot = (Mathf.Atan2(moveamount.x, moveamount.y)) * Mathf.Rad2Deg;
+        //  transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, targetRot, transform.eulerAngles.z),Time.deltaTime*5);
 
         Vector3 up = (transform.position - planet.position).normalized;
         Vector3 forward = Vector3.Cross(transform.right, up).normalized;
@@ -41,19 +43,17 @@ public class PlayerControl : MonoBehaviour
 
         var toMove = (forward * moveDir.z);
         rb.MovePosition(rb.position + toMove.normalized * speed * Time.deltaTime);
-        rb.MoveRotation(rb.rotation * Quaternion.Euler(0, moveDir.x * Time.deltaTime * rotSpeed, 0));
-
-        // float targetRot = (Mathf.Atan2(moveamount.x, moveamount.y)) * Mathf.Rad2Deg;
-        //  transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, targetRot, transform.eulerAngles.z),Time.deltaTime*5);
+        rb.MoveRotation(rb.rotation * Quaternion.Euler(0, moveDir.x * rotSpeed * Time.deltaTime, 0));
+    
 
 
-
-
-    }
+}
 
 
     private void FixedUpdate()
     {
-   
+
+
+
     }
 }
