@@ -72,7 +72,7 @@ public class Floater : MonoBehaviour
 
         if (boatSubmergedValue >0 )
         {
-            Debug.Log("under");
+           
 
             return true;
         }
