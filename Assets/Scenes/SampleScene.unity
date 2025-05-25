@@ -214,8 +214,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192906782}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.41356996, y: -0.013915309, z: 0.0063217147, w: 0.9103441}
-  m_LocalPosition: {x: 0.03, y: 31.15, z: -5}
+  m_LocalRotation: {x: 0.4135725, y: -0.013650891, z: 0.006201623, w: 0.91034776}
+  m_LocalPosition: {x: 0.03, y: 31.65, z: -5.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -235,11 +235,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackerSettings:
     BindingMode: 3
-    PositionDamping: {x: 1, y: 1.5, z: 1.5}
+    PositionDamping: {x: 0.5, y: 1.5, z: 1.5}
     AngularDampingMode: 0
-    RotationDamping: {x: 1, y: 1, z: 1}
+    RotationDamping: {x: 1, y: 2, z: 2}
     QuaternionDamping: 1
-  FollowOffset: {x: 0.03, y: 5, z: -5}
+  FollowOffset: {x: 0.03, y: 5.5, z: -5.5}
 --- !u!114 &192906788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,8 +356,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.41357005, y: -0.013915323, z: 0.0063217417, w: 0.91034406}
-  m_LocalPosition: {x: 0.03, y: 31.15, z: -5}
+  m_LocalRotation: {x: 0.41357258, y: -0.013650892, z: 0.0062016244, w: 0.9103477}
+  m_LocalPosition: {x: 0.03, y: 31.65, z: -5.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -811,6 +811,7 @@ MonoBehaviour:
   WaterSurfaceheight: 0
   boatSubmergedValue: 0
   floaterCount: 4
+  bouyancymagnifier: 1.25
   waterDamping: 0.1
   waterAngularDamp: 0.25
 --- !u!1 &684173477
@@ -866,6 +867,7 @@ MonoBehaviour:
   WaterSurfaceheight: 0
   boatSubmergedValue: 0
   floaterCount: 4
+  bouyancymagnifier: 1.25
   waterDamping: 0.1
   waterAngularDamp: 0.1
 --- !u!1 &832575517
@@ -970,6 +972,7 @@ MonoBehaviour:
   WaterSurfaceheight: 0
   boatSubmergedValue: 0
   floaterCount: 4
+  bouyancymagnifier: 1.25
   waterDamping: 0.1
   waterAngularDamp: 0.25
 --- !u!4 &1036295578 stripped
@@ -1204,6 +1207,7 @@ MonoBehaviour:
   WaterSurfaceheight: 0
   boatSubmergedValue: 0
   floaterCount: 4
+  bouyancymagnifier: 1.25
   waterDamping: 0.1
   waterAngularDamp: 0.25
 --- !u!1001 &2039804374
@@ -1441,6 +1445,10 @@ PrefabInstance:
       propertyPath: planet
       value: 
       objectReference: {fileID: 1036295578}
+    - target: {fileID: 6918099508086670752, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: waterDamping
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2795456023593891933, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
     - {fileID: 950487351351388979, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
@@ -1462,6 +1470,22 @@ PrefabInstance:
     - target: {fileID: 2982171606568973985, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
       propertyPath: m_Name
       value: WaveManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799616439564676476, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: speed
+      value: 1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799616439564676476, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: lenght
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799616439564676476, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: offset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799616439564676476, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
+      propertyPath: amplitude
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7401440084916668462, guid: 387f39aa951d7cf44b45e5c9a7c387b7, type: 3}
       propertyPath: m_LocalPosition.x

@@ -22,6 +22,7 @@ public class Floater : MonoBehaviour
     [SerializeField]
     float floaterCount =1;
     private float bouyancy;
+    [SerializeField] float bouyancymagnifier = 1.25f;
     [SerializeField]
     private float waterDamping = .1f ;
     [SerializeField]
@@ -55,7 +56,7 @@ public class Floater : MonoBehaviour
         if ( isUnderWater())
             
          {
-             bouyancy = Mathf.Clamp01(boatSubmergedValue / floatHeight);
+             bouyancy = Mathf.Clamp01(boatSubmergedValue / floatHeight) * bouyancymagnifier;
           
             //rb.AddForce(up * Physics.gravity.magnitude * bouyancy, ForceMode.Acceleration);
             rb.AddForceAtPosition(up * Physics.gravity.magnitude * bouyancy,transform.position,ForceMode.Acceleration);

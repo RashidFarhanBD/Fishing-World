@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Bait : MonoBehaviour
 {
+    bool isBaitDead;
     float baitSubmergeLevel=10;
     [SerializeField]LineRenderer lineRenderer;
    [SerializeField] Transform fishingPoint;
@@ -17,6 +18,13 @@ public class Bait : MonoBehaviour
        rb = GetComponent<Rigidbody>();
        joint = GetComponent<SpringJoint>();
 
+    }
+
+    public void SetBaitDead()
+    {
+        isBaitDead = true;
+        joint.connectedBody = null;
+       
     }
 
 

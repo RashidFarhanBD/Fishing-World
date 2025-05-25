@@ -7,6 +7,7 @@ public class FishingRod : MonoBehaviour
     public Bait bait;
     [SerializeField]LineRenderer lineRenderer;
     [SerializeField] Rigidbody rigid ;
+    [SerializeField] Bait oldBait;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,12 +24,15 @@ public class FishingRod : MonoBehaviour
         {
             {
 
+                oldBait.SetBaitDead();
+                
                 Debug.Log("throow");
 
                 var obj = Instantiate  (bait, transform.position + transform.forward* 3,Quaternion.identity);
               var rbObj =   obj.GetComponent<Rigidbody>();
                 rbObj.AddForce( transform.parent.forward * 50);
                 obj.InitBait(lineRenderer, this.transform, rigid);
+                oldBait = bait;
             }
         }
     }

@@ -55,6 +55,21 @@ public class Fish : MonoBehaviour
         return false;
     }
 
+
+
+    public void CheckForBait()
+    {
+
+        var targets = (Physics.OverlapSphere(transform.position, moveRadius));
+            
+            
+        {
+
+
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
