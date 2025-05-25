@@ -9,7 +9,7 @@ public class Bait : MonoBehaviour
    [SerializeField] Transform fishingPoint;
     Planet planetInstance;
     Rigidbody rb;
-    SpringJoint joint;
+   public  SpringJoint joint;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
