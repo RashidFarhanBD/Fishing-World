@@ -633,9 +633,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8a510fcc9268f4bb5efe8ee03587cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bait: {fileID: 2452874628422132290, guid: c7ca0440c8bd1aa46b3101740dd56ad0, type: 3}
+  baitPrefab: {fileID: 2452874628422132290, guid: c7ca0440c8bd1aa46b3101740dd56ad0, type: 3}
   lineRenderer: {fileID: 457975409}
   rigid: {fileID: 457975407}
+  oldBait: {fileID: 0}
 --- !u!120 &457975409
 LineRenderer:
   serializedVersion: 2
@@ -686,19 +687,28 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.036312103
-        value: 0.02516365
+        time: 0.08100128
+        value: 0.37106514
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9916201
+        value: 0
+        inSlope: -0.3531877
+        outSlope: -0.3531877
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.15548743
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

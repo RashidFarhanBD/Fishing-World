@@ -4,7 +4,7 @@ public class FishingRod : MonoBehaviour
 {
     float throwDist;
     bool baitThrown;
-    public Bait bait;
+    public Bait baitPrefab;
     [SerializeField]LineRenderer lineRenderer;
     [SerializeField] Rigidbody rigid ;
     [SerializeField] Bait oldBait;
@@ -23,16 +23,17 @@ public class FishingRod : MonoBehaviour
         if (mouse.leftButton.wasPressedThisFrame)
         {
             {
-
-                oldBait.SetBaitDead();
-                
+                if (oldBait)
+                {
+                    oldBait.SetBaitDead();
+                }
                 Debug.Log("throow");
 
-                var obj = Instantiate  (bait, transform.position + transform.forward* 3,Quaternion.identity);
-              var rbObj =   obj.GetComponent<Rigidbody>();
-                rbObj.AddForce( transform.parent.forward * 50);
-                obj.InitBait(lineRenderer, this.transform, rigid);
-                oldBait = bait;
+                var baitObj = Instantiate  (baitPrefab, transform.position + transform.forward* 3,Quaternion.identity);
+              var rbBait =   baitObj.GetComponent<Rigidbody>();
+                rbBait.AddForce( transform.parent.forward * 50);
+                baitObj.InitBait(lineRenderer, this.transform, rigid);
+                oldBait = baitObj;
             }
         }
     }

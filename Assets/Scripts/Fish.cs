@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Linq;
 public class Fish : MonoBehaviour
 {
     [SerializeField]
@@ -64,7 +65,11 @@ public class Fish : MonoBehaviour
             
             
         {
-
+            if (targets.Length > 0)
+            {
+                
+                Debug.Log("niom nom"+ targets[0].name);
+            }
 
         }
 
@@ -116,9 +121,9 @@ public class Fish : MonoBehaviour
                 {
                     nextPos = FindNextPosition();
                 }
-              
 
-               
+
+                CheckForBait();
 
                 break;
             case fishbehaviour.attracted:

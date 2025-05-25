@@ -1,10 +1,10 @@
 using System.Drawing;
 using UnityEngine;
-
+using DG.Tweening;
 public class Bait : MonoBehaviour
 {
     bool isBaitDead;
-    float baitSubmergeLevel=10;
+    [SerializeField]float allowedBaitSubmergeLevel=10;
     [SerializeField]LineRenderer lineRenderer;
    [SerializeField] Transform fishingPoint;
     Planet planetInstance;
@@ -24,7 +24,9 @@ public class Bait : MonoBehaviour
     {
         isBaitDead = true;
         joint.connectedBody = null;
-       
+        rb.detectCollisions = false;
+        transform.DOScale(Vector3.zero, 1).SetEase(Ease.Linear);
+        
     }
 
 
@@ -51,7 +53,7 @@ public class Bait : MonoBehaviour
         lineRenderer.SetPosition(1, transform.position);
         joint.autoConfigureConnectedAnchor = true;
         joint.connectedAnchor = fishingPoint.position;
-        if (planetInstance.GetSubmergedValue(transform) > 5)
+        if (planetInstance.GetSubmergedValue(transform) > allowedBaitSubmergeLevel)
         {
 
             // rb.constraints = RigidbodyConstraints.FreezeRotation;
