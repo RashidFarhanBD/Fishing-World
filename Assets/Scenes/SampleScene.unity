@@ -1363,6 +1363,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish
       objectReference: {fileID: 0}
+    - target: {fileID: 1703781417766088457, guid: a1cb60860938f694299ca6a41292d353, type: 3}
+      propertyPath: fishSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703781417766088457, guid: a1cb60860938f694299ca6a41292d353, type: 3}
+      propertyPath: fightStrength
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1754009281037513975, guid: a1cb60860938f694299ca6a41292d353, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.2
@@ -1403,21 +1411,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4478919472905961443, guid: a1cb60860938f694299ca6a41292d353, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4478919472905961443, guid: a1cb60860938f694299ca6a41292d353, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5951432924970589950, guid: a1cb60860938f694299ca6a41292d353, type: 3}
-      propertyPath: m_Anchor.x
+      propertyPath: m_Spring
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951432924970589950, guid: a1cb60860938f694299ca6a41292d353, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951432924970589950, guid: a1cb60860938f694299ca6a41292d353, type: 3}
+      propertyPath: m_ConnectedAnchor.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5951432924970589950, guid: a1cb60860938f694299ca6a41292d353, type: 3}
-      propertyPath: m_Anchor.y
+      propertyPath: m_ConnectedAnchor.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5951432924970589950, guid: a1cb60860938f694299ca6a41292d353, type: 3}
-      propertyPath: m_Anchor.z
-      value: 1.87
+      propertyPath: m_EnablePreprocessing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5951432924970589950, guid: a1cb60860938f694299ca6a41292d353, type: 3}
       propertyPath: m_AutoConfigureConnectedAnchor
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

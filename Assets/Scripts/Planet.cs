@@ -20,10 +20,10 @@ public class Planet : MonoBehaviour
 
         return Vector3.Distance(transform.position, pos);
     }
-    public Vector3 GetDirFromPlanet(Vector3 from)
+    public Vector3 GetDirToPlanet(Vector3 To)
     {
 
-        return from - transform.position;
+        return transform.position - To;
     }
 
 

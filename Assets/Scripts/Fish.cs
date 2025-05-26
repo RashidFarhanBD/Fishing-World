@@ -1,6 +1,5 @@
 using UnityEngine;
 using DG.Tweening;
-using System.Linq;
 using TMPro;
 using System;
 public class Fish : MonoBehaviour
@@ -35,6 +34,9 @@ public class Fish : MonoBehaviour
     [SerializeField] float waitToAttackTime = 1;
     [SerializeField] float waitToAttackTimer;
     bool ischarging;
+    [SerializeField]
+    private float fightStrength = 10f;
+
     public static event Action<Fish> OnFishCaught;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -136,8 +138,8 @@ public class Fish : MonoBehaviour
                 {
                    // transform.DOLookAt(nextPos,1.5f);
                     rb.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir.normalized),Time.deltaTime*7); 
-                   var dirpos = dir.normalized * fishSpeed * Time.deltaTime;
-                    rb.MovePosition(transform.position + dirpos);
+                   var dirpos = dir.normalized * fishSpeed * Time.fixedDeltaTime;
+                  rb.MovePosition(rb.position +  dirpos);
                 }
                
                    
@@ -149,6 +151,7 @@ public class Fish : MonoBehaviour
 
                 if (CheckForBait())
                 {
+                    baitTriggerTimer += Time.fixedDeltaTime;
                     if (baitTriggerTimer >= timeToTriggerBait)
                     {
                         IdleToAttracted();
@@ -157,7 +160,7 @@ public class Fish : MonoBehaviour
 
                 }
 
-                baitTriggerTimer += Time.fixedDeltaTime;
+            
 
                 break;
             case fishbehaviour.attracted:
@@ -179,9 +182,9 @@ public class Fish : MonoBehaviour
 
                     {
                          
-                        Vector3 newpos = Vector3.MoveTowards(transform.position, bait.transform.position, fishSpeed * Time.deltaTime);
+                        Vector3 newpos = Vector3.MoveTowards(transform.position, bait.transform.position, fishSpeed * Time.fixedDeltaTime);
                         var posToNewPos = newpos - transform.position;
-                        rb.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(posToNewPos.normalized), Time.deltaTime * 7);
+                        rb.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(posToNewPos.normalized), Time.fixedDeltaTime * 7);
                         rb.MovePosition( newpos);
 
 
@@ -207,7 +210,12 @@ public class Fish : MonoBehaviour
                 break;
             case fishbehaviour.baited:
 
-                state = fishbehaviour.idle;
+                Vector3 randomForce = new Vector3(
+    UnityEngine.Random.Range(-1f, 1f),
+       UnityEngine.Random.Range(-0.5f, 0.5f),
+       UnityEngine.Random.Range(-1f, 1f)
+   ).normalized;
+                rb.AddForce(  randomForce + (rb.position - joint.connectedBody.position) .normalized * fightStrength, ForceMode.Acceleration);
 
 
 
@@ -228,7 +236,7 @@ public class Fish : MonoBehaviour
 
     private Vector3 FindNextPosition()
     {
-       return spawnPos +  UnityEngine.Random.insideUnitSphere * moveRadius * UnityEngine.Random.Range(.5f, 1);
+       return spawnPos +  UnityEngine.Random.insideUnitSphere * moveRadius * UnityEngine.Random.Range(.8f, 1);
     }
 
     public enum fishbehaviour

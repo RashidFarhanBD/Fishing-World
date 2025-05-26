@@ -44,12 +44,12 @@ public class FishingRod : MonoBehaviour
 
     public void CopySpringJoint(SpringJoint source, SpringJoint target)
     {
-        target.autoConfigureConnectedAnchor = source.autoConfigureConnectedAnchor;
-        target.anchor = source.anchor;
-        target.connectedAnchor = source.connectedAnchor;
+       // target.autoConfigureConnectedAnchor = source.autoConfigureConnectedAnchor;
+       // target.anchor = source.anchor;
+       // target.connectedAnchor = source.connectedAnchor;
         target.connectedBody = source.connectedBody;
-        target.damper = source.damper;
-        target.spring = source.spring;
+       // target.damper = source.damper;
+       // target.spring = source.spring;
         target.minDistance = source.minDistance;
         target.maxDistance = source.maxDistance;
         target.tolerance = source.tolerance;
