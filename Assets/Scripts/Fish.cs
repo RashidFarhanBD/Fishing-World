@@ -2,6 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 using System;
+using Unity.VisualScripting;
 public class Fish : MonoBehaviour
 {
     [SerializeField]
@@ -33,11 +34,22 @@ public class Fish : MonoBehaviour
     [SerializeField] TextMeshPro txtAttention;
     [SerializeField] float waitToAttackTime = 1;
     [SerializeField] float waitToAttackTimer;
+    [SerializeField] Vector3 randomFightPos;
     bool ischarging;
     [SerializeField]
     private float fightStrength = 10f;
 
     public static event Action<Fish> OnFishCaught;
+
+    [Space(1)]
+    [Header("FightBack")]
+    [SerializeField]
+    bool isFighting;
+    [SerializeField] float fightDuration = 1f;
+    [SerializeField] float fightCooldownTimer = 0;
+    [SerializeField] float nextFightDelay;
+    [SerializeField] float fightTimer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -56,6 +68,13 @@ public class Fish : MonoBehaviour
         //}
         //transform.DOLookAt(nextPos, .1f);
         //transform.DOMove(nextPos, 3).OnComplete(() => CheckifNextPositionIsUnderWater());
+    }
+
+
+    public Rigidbody GetRB()
+    {
+
+        return rb;
     }
     private void OnDrawGizmos()
     {
@@ -88,7 +107,7 @@ public class Fish : MonoBehaviour
         {
             if (targets.Length > 0)
             {
-                Debug.Log("niom nom" + targets[0].name);
+               // Debug.Log("niom nom" + targets[0].name);
 
                 bait = targets[0].GetComponent<Bait>();
                 return true ;
@@ -174,6 +193,7 @@ public class Fish : MonoBehaviour
                  //   txtAttention.transform.DOPunchScale(Vector3.one * 3, 1,1,1);
                     waitToAttackTimer = 0;
                     ischarging = true;
+                    txtAttention.text = "!";
                 }
 
                 if (ischarging && CheckForBait())
@@ -201,7 +221,9 @@ public class Fish : MonoBehaviour
                         rb.isKinematic = false;
                         OnFishCaught.Invoke(this);
                         bait =null;
-                        
+                        ischarging=false;
+                        txtAttention.text = "<3";
+                        randomFightPos = Planet.Instance.GetPlanetScale() * .5f* UnityEngine.Random.insideUnitSphere;
                     }
                    
 
@@ -210,20 +232,92 @@ public class Fish : MonoBehaviour
                 break;
             case fishbehaviour.baited:
 
-                Vector3 randomForce = new Vector3(
-    UnityEngine.Random.Range(-1f, 1f),
-       UnityEngine.Random.Range(-0.5f, 0.5f),
-       UnityEngine.Random.Range(-1f, 1f)
-   ).normalized;
-                rb.AddForce(  randomForce + (rb.position - joint.connectedBody.position) .normalized * fightStrength, ForceMode.Acceleration);
+                if (!isFighting)
+                {
+                    fightCooldownTimer += Time.fixedDeltaTime;
+                    if (fightCooldownTimer >= nextFightDelay)
+                    {
+                        isFighting = true;
+                        fightTimer = fightDuration;
+                        fightCooldownTimer = 0;
+                        nextFightDelay = UnityEngine.Random.Range(1f, 2f);
 
 
 
+                    }
+
+
+
+                }
+
+                if (isFighting)
+                {
+                    fightTimer -= Time.fixedDeltaTime;
+                    FightBack();
+                    if (fightTimer <= 0)
+                    {
+                        isFighting = false;
+                    }
+
+
+                }
+
+               
+                // we will be back here 
 
                 break;
             case fishbehaviour.dead:
                 break;
         }
+    }
+
+
+    public static bool IsNear(Vector3 current, Vector3 target, float threshold)
+    {
+        return Vector3.Distance(current, target) <= threshold;
+    }
+
+    private void FightBack()
+    {
+
+        //Vector3 planetCenter = Planet.Instance.GetPlanetPos();
+
+        //// Gravity direction at fish's position (towards planet center)
+        //Vector3 gravityDir = (planetCenter - transform.position).normalized;
+
+        //// Direction from fish to boat (we’ll orbit around this)
+        //Vector3 toBoat = (joint.connectedBody.position - transform.position).normalized;
+
+        //// Get orbit direction (perpendicular to gravity and toBoat)
+        //Vector3 orbitDir = Vector3.Cross(gravityDir, toBoat).normalized;
+
+        //// Optional: flip direction randomly every few seconds for variety
+        //if (UnityEngine.Random.value < 0.5f)
+        //    orbitDir = -orbitDir;
+
+        //// Apply orbiting force along the curved surface
+        //rb.AddForce(orbitDir * 3, ForceMode.VelocityChange);
+
+        //// Keep fish submerged (gently correct height if it floats too high)
+        //float waterRadius = Planet.Instance.GetPlanetScale() * 0.5f + 0.2f + WaveManager.Instance.GetWaveheight(transform.position.x); // adjust offset
+        //float currentRadius = Vector3.Distance(transform.position, planetCenter);
+        //float depthError = waterRadius - currentRadius;
+
+        //rb.AddForce(gravityDir * depthError * 2f, ForceMode.Acceleration);
+
+
+        //// rb.AddForce(  randomForce + (rb.position - joint.connectedBody.position) .normalized * fightStrength, ForceMode.Acceleration);
+        //Vector3 toBoat = joint.connectedBody.position - rb.position;
+        //Vector3 awayFromBoat = -toBoat.normalized;
+        //Vector3 gravdir = (Planet.Instance.GetPlanetPos()- transform.position).normalized;
+        //Vector3 tangentDir = Vector3.ProjectOnPlane(UnityEngine.Random.onUnitSphere,gravdir).normalized;
+        //Vector3 randomOffset = UnityEngine.Random.insideUnitSphere * 0.2f;
+        //Vector3 noise = UnityEngine.Random.insideUnitSphere * 0.05f;
+        //tangentDir = Vector3.ProjectOnPlane(tangentDir + noise, gravdir).normalized;
+
+        ////   Vector3 finalDirection = (tangentDir + randomOffset).normalized;
+        //Vector3 finalDirection = (tangentDir + randomOffset).normalized;
+        //rb.AddForce(finalDirection * fightStrength , ForceMode.VelocityChange);
     }
 
     private void IdleToAttracted()

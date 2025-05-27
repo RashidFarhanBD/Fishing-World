@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Planet : MonoBehaviour
@@ -47,5 +48,8 @@ public class Planet : MonoBehaviour
 
     }
 
-
+    public Vector3 GetPlanetPos()
+    {
+        return transform.position;
+    }
 }
