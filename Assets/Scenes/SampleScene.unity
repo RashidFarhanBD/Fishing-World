@@ -1112,7 +1112,7 @@ Transform:
   m_GameObject: {fileID: 2023846218}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.4, y: 2.7, z: 0}
+  m_LocalPosition: {x: -3.5, y: 18.6, z: 11.67}
   m_LocalScale: {x: 9.05, y: 9.05, z: 9.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1201,8 +1201,8 @@ Rigidbody:
   m_GameObject: {fileID: 2023846218}
   serializedVersion: 5
   m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_LinearDamping: 2.13
+  m_AngularDamping: 1.91
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1231,8 +1231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b943378b3a2976f4894ea936e1168021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 10.2
   offset: -3.9
+  player: {fileID: 508142046}
 --- !u!114 &2023846225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,7 +1249,7 @@ MonoBehaviour:
   planet: {fileID: 1036295578}
   gravity: 9
   rb: {fileID: 2023846223}
-  applyGravity: 0
+  applyGravity: 1
 --- !u!114 &2023846226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,6 +1403,10 @@ PrefabInstance:
       propertyPath: planet
       value: 
       objectReference: {fileID: 1036295578}
+    - target: {fileID: 2225243184286240166, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2353724680110083842, guid: b5b26d9be7cd59a40ab92e25efe5e5e7, type: 3}
       propertyPath: planet
       value: 
