@@ -39,7 +39,6 @@ public class PlayerControl : MonoBehaviour
 
         Vector3 up = (transform.position - planet.position).normalized;
         Vector3 forward = Vector3.Cross(transform.right, up).normalized;
-        Vector3 right = Vector3.Cross(up, transform.forward).normalized;
 
         var toMove = (forward * moveDir.z);
         rb.MovePosition(rb.position + toMove.normalized * speed * Time.deltaTime);
