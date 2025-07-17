@@ -103,30 +103,30 @@ public class Orbitter : MonoBehaviour
 
     void Orbit3()
     {
-        //Vector3 toCenter = (transform.position - planet.position);
-        //Vector3 up = toCenter.normalized;
+       /* Vector3 toCenter = (transform.position - planet.position);
+        Vector3 up = toCenter.normalized;
 
         //// Project a forward direction tangential to the planet's surface
-        //Vector3 forward = Vector3.Cross(transform.right, up).normalized;
+        Vector3 forward = Vector3.Cross(transform.right, up).normalized;
 
         //// Zigzag pattern around the surface
-        //Vector3 zigzag = Vector3.Cross(up, forward) * Mathf.Sin(Time.time * zigzagFrequency) * zigzagAmplitude;
+        Vector3 zigzag = Vector3.Cross(up, forward) * Mathf.Sin(Time.time * zigzagFrequency) * zigzagAmplitude;
 
         //// Combine forward and zigzag movement
-        //Vector3 moveDir = (forward + zigzag).normalized;
+        Vector3 moveDir = (forward + zigzag).normalized;
 
         //// Move the fish while staying on the shell
-        //Vector3 targetPos = planet.position + up * orbitRadius;
+        Vector3 targetPos = planet.position + up * orbitRadius;
 
         //// Move toward the tangent direction
-        //rb.MovePosition(rb.position + moveDir * orbitSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + moveDir * orbitSpeed * Time.fixedDeltaTime);
 
         //// Keep fish at constant radius
-        //Vector3 newPos = planet.position + (rb.position - planet.position).normalized * orbitRadius;
-        //rb.position = newPos;
+        Vector3 newPos = planet.position + (rb.position - planet.position).normalized * orbitRadius;
+        rb.position = newPos;
 
         //// Rotate to face movement
-        //rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(moveDir, up), Time.fixedDeltaTime * 5f);
+        rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(moveDir, up), Time.fixedDeltaTime * 5f);*/
     }
 
   

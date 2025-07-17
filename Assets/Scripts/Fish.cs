@@ -45,11 +45,12 @@ public class Fish : MonoBehaviour
     [Header("FightBack")]
     [SerializeField]
     bool isFighting;
+    [SerializeField] Vector3 FightTargetpos;
     [SerializeField] float fightDuration = 1f;
     [SerializeField] float fightCooldownTimer = 0;
     [SerializeField] float nextFightDelay;
     [SerializeField] float fightTimer;
-
+    [SerializeField] GameObject debugprefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -223,7 +224,8 @@ public class Fish : MonoBehaviour
                         bait =null;
                         ischarging=false;
                         txtAttention.text = "<3";
-                        randomFightPos = Planet.Instance.GetPlanetScale() * .5f* UnityEngine.Random.insideUnitSphere;
+                        randomFightPos =( Planet.Instance.GetPlanetScale() * .5f)* UnityEngine.Random.onUnitSphere;
+                        Instantiate(debugprefab, randomFightPos, Quaternion.identity);
                     }
                    
 
@@ -231,8 +233,10 @@ public class Fish : MonoBehaviour
 
                 break;
             case fishbehaviour.baited:
+                Debug.DrawLine(transform.position, randomFightPos);
+                OrbiterLogic2();
 
-                if (!isFighting)
+             /*   if (!isFighting)
                 {
                     fightCooldownTimer += Time.fixedDeltaTime;
                     if (fightCooldownTimer >= nextFightDelay)
@@ -260,9 +264,9 @@ public class Fish : MonoBehaviour
                     }
 
 
-                }
+                }*/
 
-               
+
                 // we will be back here 
 
                 break;
@@ -276,6 +280,40 @@ public class Fish : MonoBehaviour
     {
         return Vector3.Distance(current, target) <= threshold;
     }
+
+
+    private void OrbiterLogic2()
+    {
+
+        // lets climb up to the debugs level, probably use lerp
+        if (Vector3.Distance(transform.position, randomFightPos) < 2) return;
+        Vector3 center = Vector3.zero;
+
+        // "Up" is from planet center to fish
+        Vector3 up = (transform.position - center).normalized;
+
+        // Direction from fish to target
+        Vector3 toTarget = (randomFightPos - transform.position).normalized;
+
+        // Project movement onto tangent plane (to keep movement on the sphere)
+        Vector3 tangentDir = Vector3.ProjectOnPlane(toTarget, up).normalized;
+
+        // Move in the tangent direction (around the sphere)
+        Vector3 newPos = rb.position + tangentDir * fishSpeed*.5f * Time.fixedDeltaTime;
+
+        // Re-project to maintain fixed radius from planet center
+        Vector3 fixedRadiusPos = center + (newPos - center).normalized * Planet.Instance.GetDistFromPlanet(randomFightPos);
+        rb.MovePosition(newPos);
+
+        // Rotate to face movement direction
+        Quaternion targetRot = Quaternion.LookRotation(tangentDir, up);
+        rb.rotation = Quaternion.Slerp(rb.rotation, targetRot, Time.fixedDeltaTime * 5f);
+    }
+
+
+
+
+
 
     private void FightBack()
     {
